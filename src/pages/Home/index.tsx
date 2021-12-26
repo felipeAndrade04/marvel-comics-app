@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import generateUrlParamsMarvelApi from '../../utils/generateUrlParamsMarvelApi';
 import { api } from '../../services/api';
+import { usePagination } from '../../hooks/usePagination';
+import generateUrlParamsMarvelApi from '../../utils/generateUrlParamsMarvelApi';
 
 import Header from '../../components/Header';
 import Input from '../../components/Input';
@@ -21,17 +22,35 @@ interface Comic {
 }
 
 function Home() {
-  const [comics, setComics] = useState([]);
+  const [comics, setComics] = useState<Comic[]>([]);
+
+  const { nextPage, offset } = usePagination();
 
   useEffect(() => {
     async function loadData() {
-      const response = await api.get(`/comics?${generateUrlParamsMarvelApi()}`);
+      try {
+        const updatedComics = [...comics];
 
-      setComics(response.data.data.results);
+        const response = await api.get(
+          `/comics?offset=${offset}&${generateUrlParamsMarvelApi()}`
+        );
+
+        response.data.data.results.forEach((comic: any) => {
+          updatedComics.push({
+            id: comic.id,
+            thumbnail: comic.thumbnail,
+            title: comic.title,
+          });
+        });
+
+        setComics([...updatedComics]);
+      } catch (err) {
+        console.log(err);
+      }
     }
 
     loadData();
-  }, []);
+  }, [offset]);
 
   return (
     <S.Container>
@@ -49,7 +68,7 @@ function Home() {
           ))}
         </CardGrid>
 
-        <Button onClick={() => {}} title="Carregar Mais" />
+        <Button onClick={() => nextPage(comics.length)} title="Carregar Mais" />
       </S.Content>
     </S.Container>
   );
