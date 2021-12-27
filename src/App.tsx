@@ -1,14 +1,15 @@
-import { PaginationProvider } from './hooks/usePagination';
+import AppProvider from './hooks/Providers';
+
 import Home from './pages/Home';
 
 import GlobalStyle from './styles/global';
 
 function App() {
   return (
-    <PaginationProvider>
+    <AppProvider>
       <GlobalStyle />
       <Home />
-    </PaginationProvider>
+    </AppProvider>
   );
 }
 
