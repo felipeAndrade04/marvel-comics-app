@@ -1,46 +1,102 @@
-# Getting Started with Create React App
+<h1 align="center">
+  Marvel Comics
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
 
-## Available Scripts
+<p align="center">
+  <a href="https://marvel-comics-app.netlify.app/" target="_blank">
+    <img alt="Demo on Netlify" src="https://res.cloudinary.com/lukemorales/image/upload/v1599785319/readme_logos/demo_on_netlify_umjmch.png">
+  </a>
+</p>
 
-In the project directory, you can run:
+## Indice
+- [Sobre](#-sobre)
+- [Funcionalidades](#-funcionalidades)
+- [Próximos passos](#-próximos-passos)
+- [Tecnologias](#-tecnologias)
+- [Como baixar e executar o projeto](#-como-baixar-e-executar-o-projeto)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🔖 Sobre
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+O **Marvel Comics** é uma aplicação web desenvolvida com o intuito de consumir e explorar informações dos quadrinhos da API da Marvel.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Funcionalidades
 
-### `npm run build`
+- Layout responsivo
+- Listar quadrinhos da API
+- Paginação das informações
+- Modal de detalhes do quadrinho ao clica sobre ele
+- Filtro de busca para pesquisar quadrinhos pelo título
+  - Para o filtro foi desenvolvido um hook de debounce para melhorar a performance
+- Selecionar quadrinhos para envio
+  - Modal que lista os quadrinhos selecionados e disponibiiliza um mapa para selecionar o local de envio
+- Exibir os repositórios do perfil no Github
+- Padronização de código utilizando ESlint e Prettier
+- Padronização de commits utilizando Husky e Commitlint
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎯 Próximos passos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Desenvilvimento de uma suíte de testes
+- Listagem das demais informações da API
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 👩🏻‍💻 Tecnologias
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [ReactJS](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Styled-components](https://styled-components.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [Husky](https://typicode.github.io/husky/#/)
+- [Commitlint](https://commitlint.js.org/#/)
+- [API da Marvel](https://developer.marvel.com/)
+- [API do Google Maps](https://developers.google.com/maps/documentation/javascript/overview)
+- [VS Code][vscode] with [ESLint][vceslint] and [Prettier][vcprettier]
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 🗂 Como baixar e executar o projeto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para clonar e executar esta aplicação na sua máquina é necessário ter instalado:
+- [Git](https://git-scm.com/)
+- [Yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/en/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para configurar a aplicação também é preciso ter:
+- [Chave pública e privada da API da Marvel](https://developer.marvel.com/account)
+- [Chave da API do Google Maps](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
+```bash
+
+  # Clonar o repositório
+  $ git clone https://github.com/felipeAndrade04/marvel-comics-app.git
+
+  # Entrar no diretório
+  $ cd marvel-comics-app
+
+  # Instalar as dependências
+  $ yarn install
+
+  # Duplicar o arquivo .env.example, renomear para .env e substituir as informações de acesso no seu devido local.
+
+  # Iniciar o projeto
+  $ yarn start
+
+```
+
+<br />
+
+Desenvolvido por [Felipe Andrade](https://github.com/felipeAndrade04)
+
+[vscode]: https://code.visualstudio.com/
+[vcprettier]: https://prettier.io/
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
