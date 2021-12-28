@@ -7,19 +7,22 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 1rem;
 
-  cursor: pointer;
+  > button {
+    border: none;
+    background: transparent;
 
-  img {
-    width: 216px;
-    height: 324px;
+    img {
+      width: 216px;
+      height: 324px;
 
-    -webkit-box-shadow: 0px 9px 16px -3px rgba(0, 0, 0, 0.59);
-    box-shadow: 0px 9px 16px -3px rgba(0, 0, 0, 0.59);
+      -webkit-box-shadow: 0px 9px 16px -3px rgba(0, 0, 0, 0.59);
+      box-shadow: 0px 9px 16px -3px rgba(0, 0, 0, 0.59);
 
-    -webkit-transition: transform 0.3s;
-    -moz-transition: transform 0.3s;
-    -o-transition: transform 0.3s;
-    transition: transform 0.3s;
+      -webkit-transition: transform 0.3s;
+      -moz-transition: transform 0.3s;
+      -o-transition: transform 0.3s;
+      transition: transform 0.3s;
+    }
   }
 
   &:hover {
@@ -37,6 +40,16 @@ export const Container = styled.div`
 `;
 
 export const Footer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+
+  input {
+    cursor: pointer;
+    min-width: 1.25rem;
+    min-height: 1.25rem;
+  }
+
   strong {
     font-size: 1rem;
     color: var(--black);
